@@ -1,0 +1,50 @@
+<div id="home_container">
+
+    <p>&nbsp;</p>
+
+  <%= link_to(image_tag("logo.png", :alt => "logo", :title => "Home"), "/") %>
+
+    <p>&nbsp;</p>
+
+  <div id = "user_nav">
+    <% if user_signed_in? %>
+      <p><a href="/game/index.html">CREATE A GAME<a></p>
+      <p>&nbsp;</p>
+      <p><a href="/game/join.html">JOIN GAME<a></p>
+      
+        
+    <% else %>
+      <p><a href="/users/sign_up">REGISTER<a></p>
+      <p>&nbsp;</p>
+      <p><a href="/users/sign_in">SIGN IN<a></p>
+    <% end %>
+
+  </div>
+
+  
+<!--
+  <p><a href="/pusher/chat.html">Pusher test</a></p>
+
+  <p>&nbsp;</p>
+
+  <p><a href="/articles/new.html">Weighan pusher test?</a></p>
+
+  
+-->
+  
+  <p class="notice"></p>
+  <p class="alert"></p>
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+  <p>Team I Uno project</p>
+<%
+game = Game.new
+
+game = Game.first
+puts game
+%>
+
+</div>
+
+
+

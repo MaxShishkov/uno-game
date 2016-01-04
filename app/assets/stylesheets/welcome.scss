@@ -1,0 +1,391 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+h1{
+  text-align: center;
+  color: #000000;
+  font-size: 32px;
+}
+
+p{
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+}
+
+j{
+  color: white;
+  font-size: 40px;
+  background-color: black
+}
+
+h2{
+  color: #FFFFFF;
+  font-size: 40px;
+}
+
+#top_nav {
+  background-color: #494949;
+  vertical-align:middle;
+  height: 45px;
+  color: #aeaeac;
+  width: 100%;
+
+  display:-moz-box;
+  -moz-box-align:center;
+
+  display:-webkit-box;
+  -webkit-box-align:center;
+}
+
+
+#home_container {
+  background-color: #000000;
+  text-align: center;
+  height: 100%;
+}
+
+#home_container p{
+  color: #FFFFFF;
+  margin: 0px 0px 10px 0px;
+}
+
+#home_container a,
+a:link,
+a:visited,
+a:hover,
+a:active{
+  color: #ffee00;
+}
+
+
+#create_container {
+  background-color: #000000;
+  text-align: center;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+#create_container p{
+  color: #FFFFFF;
+}
+
+#create_container h1{
+  color: #FFFFFF;
+  margin: 0px 0px 70px 0px;
+}
+
+
+#join_container {
+  background-color: #000000;
+  height: 100%;
+}
+
+#join_container p{
+  color: #FFFFFF;
+}
+
+#join_container h1{
+  color: #FFFFFF;
+  margin: 0px 0px 40px 0px;
+}
+
+
+#show_container {
+  text-align: center;
+  width: 100%;
+  background-color: #000000;
+}
+
+#show_container p{
+  color: #FFFFFF;
+}
+
+
+#show_container td{
+    vertical-align: top;
+}
+
+
+#chat_test {
+  font-size: 14px;
+  -moz-box-sizing: border-box;
+  text-align: left;
+  font-weight: bold;
+  position:absolute;
+  width: 210px;
+  opacity: 0.9;
+  color: #FFFFFF;
+  margin-top: -52px;
+}
+
+
+#chat_test p{
+  font-weight: normal;
+  text-align: left;
+  font-size: 14px;
+  color: #FFFFFF;
+
+}
+
+
+#play_table {
+    margin: 0px auto;
+    width: 760px;
+    height: 600px;
+    float: none;
+}
+
+
+#player_hand {
+    width: 600px;
+    height: 200px;
+    margin: 200px 0 0 -245px;
+}
+
+#played_cards {
+    width: 88px;
+    height: 200px;
+    margin: 20px 0 0 400px;
+}
+
+
+.style_image {
+  border: 5px solid #FFFFFF;
+}
+
+#other_players {
+}
+
+
+#other_players p{
+  margin-top: 5px;
+}
+
+
+.blue {
+    float: left;
+    width: 80px;
+    height: 120px;
+    border:1px solid #000000;
+    background-image:url('blue.png');
+    background-size: 100% auto;
+
+}
+
+.blue img {
+    width: 100%;
+    height: auto;
+}
+
+.red {
+    float: left;
+    width: 80px;
+    height: 120px;
+    border:1px solid #000000;
+    background-image:url('red.png');
+    background-size: 100% auto;
+
+}
+
+.red img {
+    width: 100%;
+    height: auto;
+}
+
+.green {
+    float: left;
+    width: 80px;
+    height: 120px;
+    border:1px solid #000000;
+    background-image:url('green.png');
+    background-size: 100% auto;
+
+}
+
+.green img {
+    width: 100%;
+    height: auto;
+}
+
+.yellow {
+    float: left;
+    width: 80px;
+    height: 120px;
+    border:1px solid #000000;
+    background-image:url('yellow.png');
+    background-size: 100% auto;
+
+}
+
+.yellow img {
+    width: 100%;
+    height: auto;
+}
+
+.wild {
+    float: left;
+    width: 80px;
+    height: 120px;
+    border:1px solid #000000;
+    background-image:url('black.png');
+    background-size: 100% auto;
+
+}
+
+.wild img {
+    width: 100%;
+    height: auto;
+}
+
+.wild:hover .colors {
+    display : block;
+
+}
+
+.wild:hover .pick {
+    display : none;
+}
+
+.colors {
+  margin-top: -28px;
+  margin-left: 1px;
+  color: blue;
+  display: none;
+}
+
+.colors img{
+  width: 15px;
+  height: auto;
+}
+
+
+
+/* join table */
+.join_table {
+    margin-top:50px;
+    margin-left:50px;
+    margin-right:50px;
+    padding:0px;
+    border:1px solid #000000;
+    
+    -moz-border-radius-bottomleft:3px;
+    -webkit-border-bottom-left-radius:3px;
+    border-bottom-left-radius:3px;
+    
+    -moz-border-radius-bottomright:3px;
+    -webkit-border-bottom-right-radius:3px;
+    border-bottom-right-radius:3px;
+    
+    -moz-border-radius-topright:3px;
+    -webkit-border-top-right-radius:3px;
+    border-top-right-radius:3px;
+    
+    -moz-border-radius-topleft:3px;
+    -webkit-border-top-left-radius:3px;
+    border-top-left-radius:3px;
+}
+
+
+.join_table table{
+    border-collapse: collapse;
+        border-spacing: 0;
+    width:100%;
+    height:100%;
+    margin:0px;padding:0px;
+}
+
+.join_table tr:last-child td:last-child {
+    -moz-border-radius-bottomright:3px;
+    -webkit-border-bottom-right-radius:3px;
+    border-bottom-right-radius:3px;
+}
+
+.join_table table tr:first-child td:first-child {
+    -moz-border-radius-topleft:3px;
+    -webkit-border-top-left-radius:3px;
+    border-top-left-radius:3px;
+}
+
+.join_table table tr:first-child td:last-child {
+    -moz-border-radius-topright:3px;
+    -webkit-border-top-right-radius:3px;
+    border-top-right-radius:3px;
+}
+
+.join_table tr:last-child td:first-child{
+    -moz-border-radius-bottomleft:3px;
+    -webkit-border-bottom-left-radius:3px;
+    border-bottom-left-radius:3px;
+}
+
+.join_table tr:hover td{
+    
+}
+
+.join_table tr:nth-child(odd){ 
+  background-color:#7f7f7f; 
+}
+
+.join_table tr:nth-child(even) { 
+  background-color:#292929; 
+}
+
+.join_table td{
+    vertical-align:middle;
+    border:1px solid #000000;
+    border-width:0px 1px 1px 0px;
+    text-align:left;
+    padding:7px;
+    font-size:15px;
+    font-family:Arial;
+    font-weight:normal;
+    color:#FFFFFF;
+}
+
+.join_table tr:last-child td{
+    border-width:0px 1px 0px 0px;
+}
+
+.join_table tr td:last-child{
+    border-width:0px 0px 1px 0px;
+}
+
+.join_table tr:last-child td:last-child{
+    border-width:0px 0px 0px 0px;
+}
+
+.join_table tr:first-child td{
+        background:-o-linear-gradient(bottom, #999999 5%, #333333 100%);    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #999999), color-stop(1, #333333) );
+    background:-moz-linear-gradient( center top, #999999 5%, #333333 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#999999", endColorstr="#333333");  background: -o-linear-gradient(top,#999999,333333);
+
+    background-color:#999999;
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:14px;
+    font-family:Arial;
+    font-weight:bold;
+    color:#ffffff;
+}
+.join_table tr:first-child:hover td{
+    background:-o-linear-gradient(bottom, #999999 5%, #333333 100%);    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #999999), color-stop(1, #333333) );
+    background:-moz-linear-gradient( center top, #999999 5%, #333333 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#999999", endColorstr="#333333");  background: -o-linear-gradient(top,#999999,333333);
+
+    background-color:#999999;
+}
+.join_table tr:first-child td:first-child{
+    border-width:0px 0px 1px 0px;
+}
+.join_table tr:first-child td:last-child{
+    border-width:0px 0px 1px 1px;
+}

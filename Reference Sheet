@@ -1,0 +1,40 @@
+Cards are ranked  0 - 14
+  0 - 9 are regular number cards
+    10 is skip
+    11 is reverse
+    12 is draw 2
+    13 is wild
+    14 is wild draw 4
+
+Cards have colors 0 - 4
+  0 is "black" meant for "wild" and "wild draw 4"
+  1 is red
+  2 is yellow
+  3 is green
+  4 is blue
+  most important that 0 is black
+
+Card Owner
+  The Owner of a card is the ID of the user who owns it
+  If the card is in the deck, its owner is 0
+  If the card is in the discard pile, its owner is -1
+  If the card is the top card of the discard pile, its owner is -2
+
+Card effects
+  3+ players:
+    skip: next player's turn is skipped
+    reverse: if going ccw, then go cw, or vice versa
+    draw 2: next player draws 2 cards and skips his turn
+    wild: person who played this declares what color the wild card represents
+    wild draw 4: like wild but next player also draws 4 cards (also skips his turn)
+
+  2  players:
+    skip: you get an extra turn
+    reverse: becomes skip ^
+    draw 2 or wild draw 4: other player must draw cards and you get to play another card
+
+Winning:
+  A player wins when he has no more cards in his hand
+
+
+Priority 3's

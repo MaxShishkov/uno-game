@@ -1,0 +1,33 @@
+<p>
+	<% if Game.find(current_user[:game_id]).session %>
+        <% if current_user.activeTurn == false %>
+        <p>&nbsp;</p>
+        <% else %>
+          <p><a href = "/game/draw">Draw Card</a></p>
+        <% end %>
+		<%
+		card = Card.find(Game.find(current_user.game_id).lastPlayedCard)
+		game = Game.find(current_user.game_id)
+		%>
+        <!-- Hid debug code
+		Game_lastPlayedCard: <%=game.lastPlayedCard%>, Game_value: <%=game.value%>, Game_color: <%=game.color%>
+		<br>
+		Card_ID: <%=card.id%>, Game_ID: <%=card.game_id%>, Owner <%=card.owner%>, Value: <%=card.value%>, Color: <%=card.color%>
+        -->
+
+        <!-- Kenny test code -->
+
+        <% if card.color == "wild" %>
+            <div class="<%=game.color%>">         
+              <%= image_tag(card.value, :alt => "card") %>
+           </div>
+        <% else %>
+            <div class="<%=card.color%>">         
+              <%= image_tag(card.value, :alt => "card") %>
+           </div>
+        <% end %>
+
+
+        <!-- end of Kenny test code -->
+	<% end %>
+</p>

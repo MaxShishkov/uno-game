@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uno</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <%= javascript_include_tag "http://js.pusherapp.com/1.9/pusher.min.js" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+    <div id="top_nav">
+      <% if (params[:action] == 'show') %>
+        &nbsp;&nbsp;
+        <a href="/game/leave">Leave Game</a>
+        
+       
+
+      <% else %>
+
+        &nbsp;&nbsp;
+        <a href="/">Home Page</a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <% if user_signed_in? %>
+            Signed in as: <strong><%= current_user.email.gsub(/@.*/, '') %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+          <% end %>
+      <% end %>
+    </div>
+    <%= yield %>
+    
+  <% if (params[:action] == 'show') %>  
+    <%= pusher_include_tag '2.2' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% end %>
+  
+</body>
+</html>

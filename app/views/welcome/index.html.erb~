@@ -1,0 +1,11 @@
+<h2>Team i</h2>
+<p>&nbsp;</p>
+<p><a href="/users/sign_up">Register<a></p>
+<p><a href="/users/sign_in">Sign in<a></p>
+<p>&nbsp;</p>
+<p>Kenny McHoes</p>
+<p>Max Shishkov</p>
+<p>WeiGhan Lee</p>
+<p>Jason Ziqi Huang Complete!</p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>

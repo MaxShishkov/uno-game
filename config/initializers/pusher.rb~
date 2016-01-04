@@ -1,0 +1,11 @@
+require 'pusher'
+
+Pusher.app_id = ENV['154361']
+Pusher.key = ENV['01eda5cd7a1c80c5aa86']
+Pusher.secret = ENV['e8b38d649786c8d0ec10']
+Pusher.url = ENV["https://01eda5cd7a1c80c5aa86:e8b38d649786c8d0ec10@api.pusherapp.com/apps/154361"]
+Pusher.logger = Rails.logger
+
+#Pusher.trigger('test_channel', 'my_event', {
+  #message: 'Kenny Push Message'
+#})

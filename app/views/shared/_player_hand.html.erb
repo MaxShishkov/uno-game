@@ -1,0 +1,128 @@
+        
+     <% if @game.user.size == 1 %>
+       <p>Waiting for other player to join game.</p>
+     <% end %>
+         
+     <% #start game button if the game is not being played
+        if (!Game.find(current_user[:game_id]).session)
+        %>
+          <% if @game.user.size >= 2 and @game.user.index(current_user.id) == 0 %>
+            <p><a href="/game/start">Start Game</a></p>
+          <% end %>
+        <% end %>
+
+
+<%if Game.find(current_user[:game_id]).session %>
+
+       <% if current_user.activeTurn == false %>
+           <p>Waiting for other player to take turn</p>
+         <% end %>
+
+		<% Card.where(owner: current_user.id, game_id: current_user.game_id).each do |card| %>
+
+      <% if card.color == "wild" %>
+        <!-- hid debug
+        <a href = "/cards/blue/<%= card.id %>">
+          WILD_BLUE Card_ID: <%=card.id%>, Value: <%=card.value%>, Color: <%=card.color%>
+        </a>
+
+        <br>
+        <a href = "/cards/yellow/<%= card.id %>">
+          WILD_YELLOW Card_ID: <%=card.id%>, Value: <%=card.value%>, Color: <%=card.color%>
+        </a>
+
+        <br>
+        <a href = "/cards/red/<%= card.id %>">
+          WILD_RED Card_ID: <%=card.id%>, Value: <%=card.value%>, Color: <%=card.color%>
+        </a>
+
+        <br>
+        <a href = "/cards/green/<%= card.id %>">
+          WILD_GREEN Card_ID: <%=card.id%>, Value: <%=card.value%>, Color: <%=card.color%>
+        </a>
+        -->
+
+        <!-- Kenny test code -->
+        <div class="<%=card.color%>">
+          <%= image_tag(card.value, :alt => "card") %>
+
+          <div class="colors">
+         <% if current_user.activeTurn == false %>
+            <table>
+              <tr>
+                <td>
+                  <%= image_tag("select_red.png", :alt => "card") %>
+                </td>
+                <td>
+                  <%= image_tag("select_yellow.png", :alt => "card") %>
+                </td>
+                <td>
+                  <%= image_tag("select_blue.png", :alt => "card") %>
+                </td>
+                <td>
+                  <%= image_tag("select_green.png", :alt => "card") %>
+                </td>
+              </tr>
+            </table>
+         <% else %>
+            <table>
+              <tr>
+                <td>
+                  <a href = "/cards/red/<%= card.id %>"><%= image_tag("select_red.png", :alt => "card") %></a>
+                </td>
+                <td>
+                  <a href = "/cards/yellow/<%= card.id %>"><%= image_tag("select_yellow.png", :alt => "card") %></a>
+                </td>
+                <td>
+                  <a href = "/cards/blue/<%= card.id %>"><%= image_tag("select_blue.png", :alt => "card") %></a>
+                </td>
+                <td>
+                  <a href = "/cards/green/<%= card.id %>"><%= image_tag("select_green.png", :alt => "card") %></a>
+                </td>
+              </tr>
+            </table>
+         <% end %>
+          </div>
+        </div>
+        <!-- end of Kenny test code -->
+
+      <% #only allow matching cards to be selected 
+      elsif card.value == Game.find(current_user.game_id).value || card.color == Game.find(current_user.game_id).color %>
+
+        <!-- hid debug
+        <a href = "/cards/<%= card.id %>">
+          Card_ID: <%=card.id%>, Game_ID: <%=card.game_id%>, Owner <%=card.owner%>, Value: <%=card.value%>, Color: <%=card.color%>
+        </a> <br>
+        -->
+
+        <!-- Kenny test code -->
+
+          <% if current_user.activeTurn == false %>
+            <div class="<%=card.color%>">
+                <%= image_tag(card.value, :alt => "card") %>
+            </div>
+            <!-- end of Kenny test code -->
+          <% else %>
+            <div class="<%=card.color%>">
+             <a href = "/cards/<%= card.id %>">
+                <%= image_tag(card.value, :alt => "card") %>
+            </a>
+            </div>
+          <% end %>
+      <% else %>
+
+        <!-- hid debug
+        Card_ID: <%=card.id%>, Game_ID: <%=card.game_id%>, Owner <%=card.owner%>, Value: <%=card.value%>, Color: <%=card.color%> <br>
+        -->
+        
+
+        <!-- Kenny test code -->
+        <div class="<%=card.color%>">
+            <%= image_tag(card.value, :alt => "card") %>
+        </div>
+        <!-- end of Kenny test code -->
+
+      <% end %>
+    <% end %>
+
+<% end %>

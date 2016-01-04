@@ -1,0 +1,8 @@
+== README
+
+To see the live version of this project, please visit
+
+https://dry-inlet-2192.herokuapp.com/
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

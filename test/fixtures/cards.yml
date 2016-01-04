@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cardID: 1
+  gameID: 1
+  owner: 1
+  color: 1
+  value: 1
+
+two:
+  cardID: 1
+  gameID: 1
+  owner: 1
+  color: 1
+  value: 1

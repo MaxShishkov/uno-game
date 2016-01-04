@@ -1,0 +1,105 @@
+<table>
+  <tr>
+
+    <td>&nbsp;&nbsp;&nbsp;
+    </td>
+
+    <% if @game.user.size >= 1 %>
+      <% if User.find(@game[:user][0]).activeTurn == true %>
+        <td bgcolor="#222222" style="border:1pt solid #4f4f4f;">
+      <% else %>
+        <td>
+      <% end %>
+    
+           <%if Game.find(current_user[:game_id]).session %>
+             <% player_cards = 0 %>
+               <% Card.where(game_id: @game.id, owner: @game[:user][0]).each do |card| %>  
+                 <% player_cards += 1 %>
+              <% end %>
+              <p>&nbsp;Player 1 cards:&nbsp;&nbsp;<font color="yellow"><%= player_cards %></font>&nbsp;</p>
+          <% else %>
+              <p>&nbsp;Player 1 cards:&nbsp;&nbsp;<font color="yellow">0</font>&nbsp;</p>
+          <% end %>
+    </td>
+    <% end %>
+    
+    <% if @game.user.size >= 2 %>
+    <td>&nbsp;&nbsp;&nbsp;
+    </td>
+
+      <% if User.find(@game[:user][1]).activeTurn == true %>
+        <td bgcolor="#222222" style="border:1pt solid #4f4f4f;">
+      <% else %>
+        <td>
+      <% end %>
+           <%if Game.find(current_user[:game_id]).session %>
+             <% player_cards2 = 0 %>
+               <% Card.where(game_id: @game.id, owner: @game[:user][1]).each do |card| %>  
+                 <% player_cards2 += 1 %>
+              <% end %>
+              <p>&nbsp;Player 2 cards:&nbsp;&nbsp;<font color="yellow"><%= player_cards2 %></font>&nbsp;</p>
+          <% else %>
+              <p>&nbsp;Player 2 cards:&nbsp;&nbsp;<font color="yellow">0</font>&nbsp;</p>
+          <% end %>
+    </td>
+    <% end %>
+
+    <% if @game.user.size >= 3 %>
+    <td>&nbsp;&nbsp;&nbsp;
+    </td>
+
+    
+      <% if User.find(@game[:user][2]).activeTurn == true %>
+        <td bgcolor="#222222" style="border:1pt solid #4f4f4f;">
+      <% else %>
+        <td>
+      <% end %>
+           <%if Game.find(current_user[:game_id]).session %>
+             <% player_cards3 = 0 %>
+               <% Card.where(game_id: @game.id, owner: @game[:user][2]).each do |card| %>  
+                 <% player_cards3 += 1 %>
+              <% end %>
+              <p>&nbsp;Player 3 cards:&nbsp;&nbsp;<font color="yellow"><%= player_cards3 %></font>&nbsp;</p>
+          <% else %>
+              <p>&nbsp;Player 3 cards:&nbsp;&nbsp;<font color="yellow">0</font>&nbsp;</p>
+          <% end %>
+    </td>
+    <% end %>
+
+    <% if @game.user.size >= 4 %>
+    <td>&nbsp;&nbsp;&nbsp;
+    </td>
+
+    
+      <% if User.find(@game[:user][3]).activeTurn == true %>
+        <td bgcolor="#222222" style="border:1pt solid #4f4f4f;">
+      <% else %>
+        <td>
+      <% end %>
+           <%if Game.find(current_user[:game_id]).session %>
+             <% player_cards4 = 0 %>
+               <% Card.where(game_id: @game.id, owner: @game[:user][3]).each do |card| %>  
+                 <% player_cards4 += 1 %>
+              <% end %>
+              <p>&nbsp;Player 4 cards:&nbsp;&nbsp;<font color="yellow"><%= player_cards4 %></font>&nbsp;</p>
+          <% else %>
+              <p>&nbsp;Player 4 cards:&nbsp;&nbsp;<font color="yellow">0</font>&nbsp;</p>
+          <% end %>
+    </td>
+    <% end %>
+
+    <td>&nbsp;&nbsp;&nbsp;
+    </td>
+    
+    <td>
+      <%if Game.find(current_user[:game_id]).session %>
+        <% if @game.clockwise == true %>
+           <%= image_tag("clock.png", :alt => "clockwise") %>
+        <% else %>
+           <%= image_tag("cclock.png", :alt => "clockwise") %>
+        <% end %>
+      <% end %>
+    </td>
+
+  </tr>
+</table>

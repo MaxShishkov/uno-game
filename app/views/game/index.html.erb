@@ -1,0 +1,15 @@
+<div id="create_container">
+
+<h1>Create Game</h1>
+
+
+<%= form_for @game do |f| %>
+
+  <%= f.label :"Name your game" %>
+  <%= f.text_field :name %> 
+
+  <%= submit_tag "Create Game"%>
+
+<% end %>
+
+</div>

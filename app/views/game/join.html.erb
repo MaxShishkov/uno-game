@@ -1,0 +1,29 @@
+<div id="join_container">
+
+<h1> game lobby </h1>
+
+<div class="join_table" >
+  <table >
+      <tr>
+        <td>Game Name</td> 
+        <td>Players in room</td>   
+      </tr>
+    <% Game.all.each do |game| %>
+      <tr>
+        <td>
+          <% if game.session %>
+            <%= game.name %> has started
+          <% else %>
+          <a href = "/games/<%= game.id %>">
+            <%= game.name %>
+          </a>
+          <% end %>
+        </td>
+        <td><%= game.user.size %>/4</td>   
+      </tr>
+
+    <% end %>
+  </table >
+</div>
+
+</div>

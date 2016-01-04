@@ -1,0 +1,29 @@
+<!--<div>
+    
+  <p> Game Number: <%= @game.id %> | Name: <%= @game.name %> | You are part of game: <%= current_user.game_id %> 
+  </p>
+</div>
+-->
+
+<div id="show_container">
+  
+  <table>
+    <tr>
+        <td>
+           <div id="play_table">
+              <%= render :partial => 'shared/play_table' %>
+           <div>
+        </td>
+        <td>
+         <div id="chat_test">
+            &nbsp;<%= render :partial => 'chat_messages/index' %>
+          <div>
+        </td>
+    </tr>
+  </table>
+
+
+
+
+
+</div>
